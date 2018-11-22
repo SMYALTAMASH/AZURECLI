@@ -1,6 +1,6 @@
 #!/bin/bash
 
-vmnames=( server-1 server-2 )
+vmnames=( server-1 server-2 server-3 )
 
 for name in "${vmnames[@]}"
 do
