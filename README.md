@@ -1,6 +1,8 @@
 THE KING NEVER FAILS TO WIN HIS DESTINY
 ---------------------------------------------------------------------------
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/042bab38f896421ca217338b667276f3)](https://app.codacy.com/app/SMYALTAMASH/AZURECLI?utm_source=github.com&utm_medium=referral&utm_content=SMYALTAMASH/AZURECLI&utm_campaign=Badge_Grade_Dashboard)
+
 File: azureBasicCommands.sh
 
 This file contains Azure CLI Commands and their usage
