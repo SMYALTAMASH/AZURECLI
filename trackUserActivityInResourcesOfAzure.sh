@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#The King Never Fails To Win His Destiny
 ResourceGroupName=( `az group list | jq '.[].name' | tr -d "\"" | tr "\n" " "` )
 before90Days=$(date --date="89 days ago" +"%Y-%m-%dT00:00:00Z")
 for name in "${ResourceGroupName[@]}"
