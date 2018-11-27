@@ -5,7 +5,7 @@ user=$2
 KeyFileLocation=$3
 vmnames=( $(az vm list-ip-addresses -o table -g $RGName | awk 'NR>2{print $1}' | tr "\n" " ")  )
 
-if [ $# -ne 2 ];
+if [ $# -ne 3 ];
 then
 	echo "Usage: bash rotateKey.sh ResourceGroupName Username KeyFileLocation"
 fi
