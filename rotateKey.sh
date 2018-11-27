@@ -1,6 +1,14 @@
 #!/bin/bash
+# The King Never Fails To Win His Destiny
+RGName=$1
+user=$2
+KeyFileLocation=$3
+vmnames=( $(az vm list-ip-addresses -o table -g $RGName | awk 'NR>2{print $1}' | tr "\n" " ")  )
 
-vmnames=( server-1 server-2 server-3 )
+if [ $# -ne 2 ];
+then
+	echo "Usage: bash rotateKey.sh ResourceGroupName Username KeyFileLocation"
+fi
 
 for name in "${vmnames[@]}"
 do
@@ -8,8 +16,8 @@ do
 	echo "changing key for server $name my master"
 	echo "------------------------------------------------------------------"
 	az vm user update --name $name \
-			  --resource-group myresourceGroupName \
-			  --username ops \
-			  --ssh-key-value 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2V3rrw8/9gSiesdzRd/W5a48irWpkkkPPAFLygd3pbmbtV1idBOk3O3EpmDWaNU39hD6OzHIR3 king@king'
+			  --resource-group $RGName \
+			  --username $user \
+			  --ssh-key-value "$(cat $KeyFileLocation)"
 	echo "------------------------------------------------------------------"
 done
