@@ -20,6 +20,9 @@
 --remote-vnet-id vnet-id \
 --allow-vnet-access
 
+#Vm Resource Group, VM Name, VM Private IP
+ az vm list-ip-addresses | jq -r '.[]| "RG:"+.virtualMachine.resourceGroup+" SERVER:"+.virtualMachine.name+" IP:"+.virtualMachine.network.privateIpAddresses[]' | column -t | wc -l
+
 #Subnet Creation
  az network vnet subnet create --resource-group resourceGroup --vnet-name vnet-name \
   --name agent --address-prefix 11.4.0.0/24
