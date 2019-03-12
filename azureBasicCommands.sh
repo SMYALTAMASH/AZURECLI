@@ -63,6 +63,12 @@
 --account-name storageAccountName  \
 --account-key accountKey
 
+#Bulk Upload Content to Blob
+az storage blob upload-batch --destination containerName/content-editor --source containerName --account-name azure_account_name --account-key azure_account_key
+
+#Bulk Delete Content from Blob, helpful to delete folder.
+az storage blob delete-batch --source containerName --pattern FolderName/* --account-name azure_account_name --account-key azure_account_key
+
 #Download Content from Blob
  az storage blob download \
 --container-name containerName \
