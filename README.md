@@ -30,3 +30,9 @@ File: rotateKey.sh
 This script is used to rotate the username and ssh-key for the server
 
 ----------------------------------------------------------------------------
+
+File: DiskSizeChange.sh
+
+This script is used to change the disk size of existing Azure VM
+
+----------------------------------------------------------------------------
